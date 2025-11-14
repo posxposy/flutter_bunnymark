@@ -1,0 +1,53 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Skia",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "debug",
+			"args": ["--no-enable-impeller"]
+		},
+		{
+			"name": "Debug Impeller",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "debug",
+			"args": ["--enable-impeller"]
+		},
+		{
+			"name": "Profile Skia",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "profile",
+			"args": ["--no-enable-impeller"]
+		},
+		{
+			"name": "Profile Impeller",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "profile",
+			"args": ["--enable-impeller"]
+		},
+		{
+			"name": "Release Skia",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "release",
+			"args": ["--no-enable-impeller"]
+		},
+		{
+			"name": "Release Impeller",
+			"request": "launch",
+			"type": "dart",
+			"program": "lib/main.dart",
+			"flutterMode": "release",
+			"args": ["--enable-impeller"]
+		},
+	]
+}

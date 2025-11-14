@@ -1,0 +1,19 @@
+include: package:flutter_lints/flutter.yaml
+
+formatter:
+  page_width: 120
+  trailing_commas: preserve
+
+linter:
+  rules:
+    - avoid_empty_else
+    - cancel_subscriptions
+    - close_sinks
+    - avoid_void_async
+    - unnecessary_await_in_return
+    - unnecessary_to_list_in_spreads
+    - use_colored_box
+    - use_named_constants
+    - use_if_null_to_convert_nulls_to_bools
+    - prefer_const_constructors
+    - use_null_aware_elements
