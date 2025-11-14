@@ -1,3 +1,5 @@
 # flutter_bunnymark
 
-A new Flutter project.
+### Notes
+- iOS do not have Skia backend anymore
+- On MacOS consider switching to fullscreen to enable Game Mode

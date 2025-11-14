@@ -10,4 +10,7 @@
 		"editor.formatOnSave": true,
 		"editor.formatOnType": false,
 	},
+	"cSpell.words": [
+		"Bunnymark"
+	],
 }
