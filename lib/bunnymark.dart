@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bunnymark/assets.dart';
 import 'package:flutter_bunnymark/bunny.dart';
@@ -87,7 +88,7 @@ final class Bunnymark extends Application {
 
   @override
   void onKeyEvent(KeyEvent event) {
-    final isDesktop = Platform.isLinux || Platform.isWindows || Platform.isMacOS;
+    final isDesktop = kIsWeb || (Platform.isLinux || Platform.isWindows || Platform.isMacOS);
     if (isDesktop && event is KeyDownEvent) {
       if (event.logicalKey == LogicalKeyboardKey.escape) {
         exit(0);
@@ -141,7 +142,7 @@ final class Bunnymark extends Application {
     if (_isTouching) {
       _bunnies.addAll(
         Iterable<Bunny>.generate(
-          Platform.isLinux || Platform.isWindows || Platform.isMacOS ? 250 : 25,
+          kIsWeb || (Platform.isLinux || Platform.isWindows || Platform.isMacOS) ? 250 : 25,
           (_) => Bunny(
             x: _touchX,
             y: _touchY,
@@ -201,9 +202,10 @@ final class Bunnymark extends Application {
     final rate = _view.display.refreshRate;
     final ratio = _view.display.devicePixelRatio;
     final stats = frame.frameStats;
+    final textColor = const Color(0xFFFFFFFF);
 
     final paragraphBuilder = ParagraphBuilder(_paragraphStyle);
-    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.normal, fontSize: 14.0));
+    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.normal, fontSize: 14.0, color: textColor));
     paragraphBuilder.addText(
       'fps: ${frame.fps}'
       '\nwindow: ${_view.bounds.width.toInt()}x${_view.bounds.height.toInt()}'
@@ -212,11 +214,11 @@ final class Bunnymark extends Application {
     );
     paragraphBuilder.pop();
 
-    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0));
+    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: textColor));
     paragraphBuilder.addText('\nbunnies: ${_bunnies.length}');
     paragraphBuilder.pop();
 
-    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0));
+    paragraphBuilder.pushStyle(TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0, color: textColor));
     paragraphBuilder.addText(
       '\n\nFrame Time (ms):'
       '\n  avg: ${stats.avgFrameTime.toStringAsFixed(2)}'

@@ -1,5 +1,6 @@
 # flutter_bunnymark
 
 ### Notes
-- iOS do not have Skia backend anymore
+- Impeller is not available on Web, Windows and Linux
+- Impeller is the default on iOS with no ability to switch to Skia
 - On MacOS consider switching to fullscreen to enable Game Mode
