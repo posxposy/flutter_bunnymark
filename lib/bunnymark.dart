@@ -256,14 +256,14 @@ final class Bunnymark extends Application {
 
   void _prefillIndices() {
     for (int j = 0; j < bunniesPerBatch; j++) {
-      final indicesArrayOffset = j * indicesPerQuad;
+      final indexOffset = j * indicesPerQuad;
       final baseIndex = j * verticesPerQuadWithIndices;
-      _indices[indicesArrayOffset + 0] = baseIndex + 0;
-      _indices[indicesArrayOffset + 1] = baseIndex + 1;
-      _indices[indicesArrayOffset + 2] = baseIndex + 2;
-      _indices[indicesArrayOffset + 3] = baseIndex + 0;
-      _indices[indicesArrayOffset + 4] = baseIndex + 2;
-      _indices[indicesArrayOffset + 5] = baseIndex + 3;
+      _indices[indexOffset + 0] = baseIndex + 0;
+      _indices[indexOffset + 1] = baseIndex + 1;
+      _indices[indexOffset + 2] = baseIndex + 2;
+      _indices[indexOffset + 3] = baseIndex + 0;
+      _indices[indexOffset + 4] = baseIndex + 2;
+      _indices[indexOffset + 5] = baseIndex + 3;
     }
   }
 
