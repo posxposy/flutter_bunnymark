@@ -234,6 +234,7 @@ final class Bunnymark extends Application {
       paragraph,
       const Offset(10.0, 10.0),
     );
+    paragraph.dispose();
   }
 
   void _fillBuffers(int count, int start, double hw, double hh) {
